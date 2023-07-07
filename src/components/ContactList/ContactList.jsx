@@ -1,6 +1,6 @@
 import css from '../ContactList/contactList.Module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContacts } from 'reduxe/actions';
+import { deleteContact } from '../../reduxe/contactsSlice.jsx';
 
 const ContactList = () => {
 
@@ -10,7 +10,7 @@ const ContactList = () => {
   const dispatch = useDispatch();
   const vicibleContacts = contacts.filter(({ name }) =>
   name.toLowerCase().includes(filters))
-  const handleDelete = (id) => { dispatch(deleteContacts(id)) };
+  const handleDelete = (id) => { dispatch(deleteContact(id)) };
   
   return (
     <div className="contactsContainer">

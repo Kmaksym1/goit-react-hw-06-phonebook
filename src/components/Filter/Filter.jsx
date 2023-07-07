@@ -1,17 +1,17 @@
 import css from '../ContactList//contactList.Module.css';
 import { useState } from 'react';
-import { filterContacts } from '../../reduxe/actions';
+import { filter } from '../../reduxe/filterSlice.jsx';
 import { useDispatch } from 'react-redux';
 
 export const Filter = () => {
-  const [query, setQueary] = useState('');
+  const [query, setQuery] = useState('');
 
   const dispatch = useDispatch();
 
   const onChange = ({ target }) => {
     const query = target.value;
-    setQueary(query);
-    dispatch(filterContacts(query));
+    setQuery(query);
+    dispatch(filter(query));
   };
 
   return (

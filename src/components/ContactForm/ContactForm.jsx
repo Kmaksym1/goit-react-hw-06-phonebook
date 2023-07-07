@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import css from '../ContactForm/contactForm.module.css';
-import { addContact } from '../../reduxe/actions';
+import { addContact } from '../../reduxe/contactsSlice.jsx';
 import { useDispatch } from 'react-redux';
 
 const schema = yup.object().shape({
